@@ -3,14 +3,14 @@
 Steps 1-3 in this lab are required to get the project running properly in PCF. Steps 4-6 are optional, however illustrate how to make use of the Spring Cloud Service features
 
 1. *Set up Config Server Repo*
-This step allows you to adjust logging and security without redeploying your app.
+<p>This step allows you to adjust logging and security without redeploying your app.
 	* Clone App config repo:   https://github.com/bbertka/fortune-teller-app-config
 	* Using the marketplace, create a Config Server service instance, but do not bind to an app. Set GIT URI to:  https://github.com/bbertka/fortune-teller-app-config.git
 
 Notice in the repo that each app has its own YML file with specific configurations.
 
 2. *Set up Fortune Service* 
-This service will serve fortunes to the greeting service, it will pull its initial logging and Eureka registration methods from the Config Server repo.
+<p>This service will serve fortunes to the greeting service, it will pull its initial logging and Eureka registration methods from the Config Server repo.
 	* cd fortune-service
 	* mvn clean package
 	* cf push fortune-service -p target/fortune-service-0.0.1-SNAPSHOT.jar -m 512M --random-route --no-start
