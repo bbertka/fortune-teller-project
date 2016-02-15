@@ -4,9 +4,10 @@
 Steps 1-3 in this lab are required to get the project running properly in PCF. Steps 4-6 are optional, however illustrate how to make use of the Spring Cloud Service features. All the POM dependencies are already included for each step. You wimple clone this repo and follow the instructions to configure and push into PCF.
 
 ####1. *Set up Config Server Repo*
-<p>This step allows you to adjust logging and security without redeploying your app.
-	* Clone App config repo:   https://github.com/bbertka/fortune-teller-app-config
-	* Using the marketplace, create a Config Server service instance, but do not bind to an app. Set GIT URI to:  https://github.com/bbertka/fortune-teller-app-config.git
+
+This step allows you to adjust logging and security without redeploying your app.
+* Clone App config repo:   https://github.com/bbertka/fortune-teller-app-config
+* Using the marketplace, create a Config Server service instance, but do not bind to an app. Set GIT URI to:  https://github.com/bbertka/fortune-teller-app-config.git
 
 Notice in the repo that each app has its own YML file with specific configurations.
 
