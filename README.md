@@ -20,7 +20,7 @@ This service will serve fortunes to the greeting service, it will pull its initi
 * cf create-service p-service-registry standard service-registry
 * cf bind-service fortune-service config-server
 * cf bind-service fortune-service service-registry
-* cf set-env fortune-service CF_TARGET https://api.vert.fe.gopivotal.com
+* cf set-env fortune-service CF_TARGET https://api.your.domain.com
 * cf start fortune-service
 
 Its mandatory that CF_TARGET is set so the service discovery works properly.
@@ -33,7 +33,7 @@ This service will provide a front end UI to the system, like fortune-service, it
 * cf push greeting-service -p target/greeting-service-0.0.1-SNAPSHOT.jar -m 512M -i 2 --random-route --no-start
 * cf bind-service greeting-service config-server
 * cf bind-service greeting-service service-registry
-* cf set-env greeting-service CF_TARGET https://api.vert.fe.gopivotal.com
+* cf set-env greeting-service CF_TARGET https://api.your.domain.com
 * cf start greeting-service
 
 By now you should be able to see each app registered within Service Discovery Management console.  Note how each app registers differently, with either a Route, or a container IP address.  When we apply client side load balancing with Ribbon, each registration method should be direct, otherwise we are adding reduntant load balancing via the Go router which defeats the purpose of using Ribbon in the first place.
@@ -57,7 +57,7 @@ We will see that multiple instances of apps are running in a bounded context, he
 * Open a third terminal window
 	* Set "logging: DEBUG" in greeting-service.yml
 	* git push the changes
-	* curl -X POST https://<app route>/refresh
+	* curl -X POST https://greeting-service-route/refresh
 
 Notice that only 1 instance is in DEBUG logging mode -- so we need cloud bus refresh to hit them all
 
@@ -73,7 +73,7 @@ To get around the bounded context of a microservice, we add a Cloud Bus that is 
 Now that we have a Bus set up, we can adjust logging for all our instances at once
 * Set "logging: INFO" in greeting-service.yml
 * git push the changes
-* curl -X POST https://<app route>/bus/refresh
+* curl -X POST https://greeting-service-route/bus/refresh
 
 ####Coming Soon
 * Ribbon Client Side Load Balancing
