@@ -5,7 +5,7 @@ This lab allows you to explore a working project making use of Netflix OSS patte
 
 ####1. *Set up Config Server Repo*
 
-This step allows you to adjust logging and security without redeploying your app.
+This repo provides your system with a basic configuration. The Config Server service allows you to adjust logging and security without redeploying your app.
 * Clone App config repo:   https://github.com/bbertka/fortune-teller-app-config
 * Using the marketplace, create a Config Server service instance, but do not bind to an app. Set GIT URI to:  https://github.com/bbertka/fortune-teller-app-config.git
 
