@@ -1,7 +1,7 @@
 ## Spring Cloud Fortune Teller
 ###Microservices lab with Spring Cloud Services in Pivotal Cloud Foundry
 
-Steps 1-3 in this lab are required to get the project running properly in PCF. Steps 4-6 are optional, however illustrate how to make use of the Spring Cloud Service features. All the POM dependencies are already included for each step. You wimple clone this repo and follow the instructions to configure and push into PCF.
+This lab allows you to explore a working project making use of Netflix OSS patterns and non distruptive configuration changes using the Spring Cloud Services tile in Pivotal Cloud Foundry.  To be successful with this lab, please make sure your platform has Spring Cloud Services tile installed. This lab assumes some prior experience with Spring and Pivotal cloud Foundry, including use of the marketplace and Apps manager interface. Steps 1-3 in this lab are required to get the project running properly in PCF. Steps 4-7 are optional, however illustrate how to make use of the Spring Cloud Service features. All the POM dependencies are already included for each step. You simply clone this repo and follow the instructions to configure and push into PCF.
 
 ####1. *Set up Config Server Repo*
 
